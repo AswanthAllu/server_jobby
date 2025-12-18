@@ -12,7 +12,12 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 
 
-app.use(cors());
+// server/server.js
+app.use(cors({
+  origin: 'https://client-jobby.vercel.app/login', // Replace with your actual Vercel URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
 
 
 app.use(express.json());
